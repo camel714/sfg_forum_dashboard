@@ -161,7 +161,7 @@
   .aitem .atag{font-size:13px;font-weight:800;padding:1px 9px;border-radius:6px;flex:0 0 auto;
     color:var(--c);border:1px solid var(--c);background:transparent;}
   .aitem .gnum{font-size:13px;font-weight:800;color:#9fb0cc;flex:0 0 auto;font-variant-numeric:tabular-nums;}
-  .aitem .aitxt{font-size:15px;font-weight:500;color:#dbe6f7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1 1 auto;min-width:0;}
+  .aitem .aitxt{font-size:17px;font-weight:500;color:#dbe6f7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1 1 auto;min-width:0;}
   .aitem.more .aitxt{color:var(--c);font-weight:800;}
   .aitem.none{opacity:.6;} .aitem.none .aitxt{color:var(--muted);}
   .midrow{display:flex;gap:18px;flex:1;min-height:0;}
@@ -227,14 +227,14 @@
   .jtime{font-size:14px;font-weight:800;color:#7d8db0;}
   .jtime em{font-style:normal;color:#5eead4;font-weight:800;}
   .jrow.active .jtime{color:#5eead4;}
-  .jdesc{font-size:18px;font-weight:500;color:#b9c6dc;line-height:1.35;margin-top:3px;
+  .jdesc{font-size:20px;font-weight:500;color:#b9c6dc;line-height:1.35;margin-top:3px;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .jrow.active .jdesc{color:#eaf1fb;font-weight:600;}
   .ispacer{flex:0 0 30px;}
   .iai{flex:0 0 auto;background:linear-gradient(90deg,rgba(59,130,246,.14),rgba(59,130,246,.02));
     border:1px solid #2b4a7e;border-left:4px solid #3b82f6;border-radius:12px;padding:13px 18px;}
   .ailab{font-size:13px;font-weight:900;color:#7dd3fc;letter-spacing:1px;margin-bottom:6px;}
-  .aitxt2{font-size:18px;font-weight:600;color:#eaf1fb;line-height:1.45;}
+  .aitxt2{font-size:20px;font-weight:600;color:#eaf1fb;line-height:1.45;}
   /* controls */
   .controls{position:absolute;right:44px;bottom:22px;display:flex;gap:9px;align-items:center;z-index:5;}
   .btn{background:#16223a;border:1px solid var(--line);color:var(--ink);border-radius:10px;
@@ -270,8 +270,8 @@
 <div class="stage">
   <div id="screen"></div>
   <div class="controls">
-    <div class="speed"><span class="slbl">롤링 <b id="ivval">5</b>초</span>
-      <input type="range" id="ivrange" min="5" max="60" step="5" value="5"></div>
+    <div class="speed"><span class="slbl">롤링 <b id="ivval">8</b>초</span>
+      <input type="range" id="ivrange" min="5" max="60" step="1" value="8"></div>
     <button class="btn" id="prev">◀ 이전</button>
     <button class="btn" id="playpause">⏸ 일시정지</button>
     <button class="btn" id="next">다음 ▶</button>
@@ -449,7 +449,7 @@ function applyDensity(n){ const v=densityVars(n); for(const k in v) screen.style
 
 /* ============================ 렌더 ============================ */
 const screen=document.getElementById("screen");
-let idx=0,playing=true,interval=5,countdown=5,cdTimer=null;
+let idx=0,playing=true,interval=8,countdown=8,cdTimer=null;
 
 function timeLabel(){
   const t=new Date(START.getTime()+CURRENT_BATCH*20*60000);
