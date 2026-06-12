@@ -269,8 +269,8 @@
 <div class="stage">
   <div id="screen"></div>
   <div class="controls">
-    <div class="speed"><span class="slbl">롤링 <b id="ivval">60</b>초</span>
-      <input type="range" id="ivrange" min="5" max="60" step="5" value="60"></div>
+    <div class="speed"><span class="slbl">롤링 <b id="ivval">5</b>초</span>
+      <input type="range" id="ivrange" min="5" max="60" step="5" value="5"></div>
     <button class="btn" id="prev">◀ 이전</button>
     <button class="btn" id="playpause">⏸ 일시정지</button>
     <button class="btn" id="next">다음 ▶</button>
@@ -447,7 +447,7 @@ function applyDensity(n){ const v=densityVars(n); for(const k in v) screen.style
 
 /* ============================ 렌더 ============================ */
 const screen=document.getElementById("screen");
-let idx=0,playing=true,interval=60,countdown=60,cdTimer=null;
+let idx=0,playing=true,interval=5,countdown=5,cdTimer=null;
 
 function timeLabel(){
   const t=new Date(START.getTime()+CURRENT_BATCH*20*60000);
